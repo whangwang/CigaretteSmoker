@@ -16,10 +16,9 @@ import java.util.Random;
 
 public class TableClass {
 
-    private ArrayList<String> allElements = new ArrayList<String>();
-    private ArrayList<String> agentElements = new ArrayList<String>();
+    private ArrayList<String> Elements = new ArrayList<String>();
 
-    public TableClass(String element1,String element2)
+    public TableClass()
     {
         
     }
