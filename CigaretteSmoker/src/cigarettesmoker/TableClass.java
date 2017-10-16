@@ -18,7 +18,8 @@ public class TableClass {
         }
     }
     
-    public void SetTable(String Material1,String Material2){
+    public void SetTable(String Material1,String Material2)
+    {
         Elements.add(Material1);
         Elements.add(Material2);
     }
