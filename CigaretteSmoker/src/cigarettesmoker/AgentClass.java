@@ -9,6 +9,6 @@ package cigarettesmoker;
  *
  * @author eric
  */
-public class agentclass {
+public class AgentClass {
     
 }
