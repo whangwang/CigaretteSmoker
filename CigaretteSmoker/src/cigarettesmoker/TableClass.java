@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cigarettesmoker;
 
 /**
@@ -11,8 +6,6 @@ package cigarettesmoker;
  */
 
 import java.util.ArrayList;
-import java.util.Random;
-
 
 public class TableClass {
 
@@ -20,6 +13,13 @@ public class TableClass {
 
     public TableClass()
     {
-        
+        while(!Elements.isEmpty()){
+            Elements.remove(0);
+        }
+    }
+    
+    public void SetTable(String Material1,String Material2){
+        Elements.add(Material1);
+        Elements.add(Material2);
     }
 }
