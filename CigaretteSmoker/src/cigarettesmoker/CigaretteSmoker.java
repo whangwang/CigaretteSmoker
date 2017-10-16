@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author HanWang
  */
-public class CigaretteSmoker extends Application {
+public class CigaretteSmoker extends Application implements Runnable {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,6 +30,9 @@ public class CigaretteSmoker extends Application {
     /**
      * @param args the command line arguments
      */
+    public void run()
+  {
+  }
     public static void main(String[] args) {
         launch(args);
     }
