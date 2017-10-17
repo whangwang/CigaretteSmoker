@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cigarettesmoker.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #F4F4F4;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cigarettesmoker.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+      <Label layoutX="137.0" layoutY="772.0" prefHeight="50.0" prefWidth="336.0" text="104703006 資科三 徐子崴" textFill="#566856">
+         <font>
+            <Font name="Century Gothic" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="725.0" prefHeight="50.0" prefWidth="332.0" text="104703004 資科三 徐躍華" textFill="#566856">
+         <font>
+            <Font name="Century Gothic" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="678.0" prefHeight="50.0" prefWidth="295.0" text="104703002 資科三 王瀚" textFill="#566856">
+         <font>
+            <Font name="Century Gothic" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="249.0" prefHeight="67.0" prefWidth="345.0" text="Problem" textFill="#8f9b5d">
+         <font>
+            <Font name="Century Gothic" size="62.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="174.0" prefHeight="67.0" prefWidth="739.0" text="The Cigarette Smokers" textFill="#8f9b5d">
+         <font>
+            <Font name="Century Gothic" size="62.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="117.0" prefHeight="50.0" prefWidth="295.0" text="ThreadMentor" textFill="#566856">
+         <font>
+            <Font name="Century Gothic" size="38.0" />
+         </font>
+      </Label>
+      <WebView fx:id="svgtest" layoutX="916.0" layoutY="493.0" onMouseClicked="#start_btn_click" onMouseEntered="#btnhoverin" onMouseExited="#btnhoverout" prefHeight="390.0" prefWidth="410.0" />
     </children>
 </AnchorPane>
