@@ -5,17 +5,20 @@
  */
 package cigarettesmoker;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import cigarettesmoker.AgentClass.table;
+
 
 /**
  *
  * @author HanWang
  */
-public class CigaretteSmoker extends Application implements Runnable {
+public class CigaretteSmoker extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,11 +33,22 @@ public class CigaretteSmoker extends Application implements Runnable {
     /**
      * @param args the command line arguments
      */
-    public void run()
-  {
-  }
+
     public static void main(String[] args) {
+        
         launch(args);
+        
+        ArrayList<String> ConstantMaterial = new ArrayList<String>();
+        ConstantMaterial.add("Paper");
+        ConstantMaterial.add("Tobacco");
+        ConstantMaterial.add("Matches");
+        table SmokingTable = new table();
+        
+        for(int i=0;i<3;i++){
+            SmokerClass smoker = new SmokerClass(ConstantMaterial.get(i),SmokingTable);
+            smoker.start();
+        }
+        
     }
     
 }
