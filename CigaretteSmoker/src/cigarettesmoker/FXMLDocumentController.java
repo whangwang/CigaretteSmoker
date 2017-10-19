@@ -6,6 +6,7 @@
 package cigarettesmoker;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,6 +55,10 @@ public class FXMLDocumentController implements Initializable {
         final WebEngine eng = svgtest.getEngine();
         URL svgpath = this.getClass().getResource("startbtn.svg");
         eng.load(svgpath.toString());
-    }    
+    }
     
+    public void test(ArrayList a){
+        System.out.println(a);
+        
+    }
 }

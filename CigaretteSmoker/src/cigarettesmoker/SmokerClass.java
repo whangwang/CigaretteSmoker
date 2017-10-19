@@ -1,6 +1,6 @@
 package cigarettesmoker;
 
-import cigarettesmoker.AgentClass.table;
+import cigarettesmoker.AgentClass;
 import java.util.ArrayList;
 
 /**
@@ -10,16 +10,17 @@ import java.util.ArrayList;
 
 public class SmokerClass extends Thread{
 
-    static table Table = new table();
+    //static table Table = new table();
     private String element;
     private ArrayList<String> Items = new ArrayList();
 
-    public SmokerClass(String Element , table SmokingTable)
+    /*public SmokerClass(String Element , table SmokingTable)
     {
         this.Table = SmokingTable;
         element = Element;
         Items = Table.Getitems();
     }
+*/
 
     @Override
     public void run()

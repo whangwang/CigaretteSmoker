@@ -6,15 +6,16 @@
 package cigarettesmoker;
 
 import static java.lang.Thread.sleep;
-import java.util.ArrayList;
-import java.util.concurrent.Semaphore;
 
 /**
  *
  * @author eric
  */
-public class AgentClass {
-   public static void main(String[] args) throws InterruptedException {
+public class AgentClass extends Thread {
+    //TableClass Table=new TableClass();
+   /*
+    
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         AgentClass go =new AgentClass();
         go.run();
@@ -70,36 +71,44 @@ public class AgentClass {
                 notify();
             } catch(Exception e){}
         }
-    static table Table = new table();
+    Tableclass Table =new Tableclass();
     
-    class agent extends Thread{
+    */
+    
+    //class agent extends Thread{
        private String Item1;
        private String Item2;
-       private String Material; 
-       
-       public agent(String material){
+       private String Material;
+       public static TableClass Table =new TableClass();
+       AgentClass(String material ){
            Material = material;
+           System.out.println("Build: "+Material);
        }
-       
+
        public String Getame(){
            return Material;
        }
        
        public void run(){
+           System.out.println(Material+" runing");
            while(true){
+               System.out.println(Material+" inwhile runing");
                try{
                    Table.run(Material);
                    System.out.println(Material);
                    pause();
                    Table.Release();
-                   sleep(1000);
+                   sleep(10);
                }catch(Exception e){}
            
-       }
+               }
+       
            }
        public synchronized void wake(){
             try{
                 notify();
+                System.out.println(Material+" notify");
+                
             } catch(Exception e){}
         }
 
@@ -111,6 +120,8 @@ public class AgentClass {
                
        
     }
+    
+    /*
     static class table {
         final Semaphore Notfull = new Semaphore(2);
         final Semaphore Using = new Semaphore(1);
@@ -146,8 +157,7 @@ public class AgentClass {
             } catch (InterruptedException e) {}
         }
             
-        }
-        
-}
+        }*/
+       
     
 
