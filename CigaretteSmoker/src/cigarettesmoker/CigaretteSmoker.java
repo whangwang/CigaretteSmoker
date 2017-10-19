@@ -38,12 +38,7 @@ public class CigaretteSmoker extends Application {
 //        AgentClass CigarettePaperAgent=new AgentClass ("CigarettePaper");
 //        AgentClass TobaccoAgent=new AgentClass ("Tobacco");
 //        AgentClass MatchesAgent=new AgentClass ("Mactches");
-////        Thread z=new Thread(CigarettePaperAgent);
-////        Thread b=new Thread(TobaccoAgent);
-////        Thread c=new Thread(MatchesAgent);
-////        z.start();
-////        b.start();
-////        c.start();
+
 //        CigarettePaperAgent.start();
 //        TobaccoAgent.start();
 //        MatchesAgent.start();
@@ -100,45 +95,6 @@ public class CigaretteSmoker extends Application {
     public static void main(String[] args) throws InterruptedException {
         
         launch(args);
-        
-//        ArrayList<String> ConstantMaterial = new ArrayList<String>();
-//        ConstantMaterial.add("Paper");
-//        ConstantMaterial.add("Tobacco");
-//        ConstantMaterial.add("Matches");
-//        FXMLDocumentController a = new FXMLDocumentController();
-//        TableClass Table = new TableClass();
-//        AgentClass CigarettePaperAgent=new AgentClass ("CigarettePaper");
-//        AgentClass TobaccoAgent=new AgentClass ("Tobacco");
-//        AgentClass MatchesAgent=new AgentClass ("Mactches");
-//        while(true){
-//            sleep(3000);
-//            
-//            if(Table.Getitems().size()==2){
-//                
-//                System.out.println("INmain: "+Table.Getitems());
-//                if(!Table.Getitems().contains("Paper")){
-//                    TobaccoAgent.wake();
-//                    MatchesAgent.wake();
-//                    System.out.println("One");
-//                }
-//                else if(!Table.Getitems().contains("Tobacco")){
-//                    CigarettePaperAgent.wake();
-//                    MatchesAgent.wake();   
-//                    System.out.println("Two");
-//                }
-//                else{
-//                    CigarettePaperAgent.wake();
-//                    TobaccoAgent.wake();
-//                    System.out.println("Three");
-//                }  
-//            }
-//        }
-//        
-        
-       // for(int i=0;3>=i;i++){
-           // SmokerClass smoker = new SmokerClass(ConstantMaterial.get(i),SmokingTable);
-            //smoker.start();
-       //}
         
     }
     

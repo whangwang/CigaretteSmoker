@@ -15,7 +15,7 @@ import java.util.concurrent.Semaphore;
  */
 
 public class TableClass {
-//    public static class table {
+
         private Semaphore Notfull = new Semaphore(2);
         private Semaphore Using = new Semaphore(1);
         private ArrayList Items = new ArrayList();
@@ -42,16 +42,4 @@ public class TableClass {
         public ArrayList Getitems(){
             return (Items);
         }
-        public synchronized void wake(){
-            try{
-                notify();
-            } catch(Exception e){}
-        }
-
-        public synchronized void pause(){
-            try{
-                this.wait();
-            } catch (InterruptedException e) {}
-        }
-            
 }
