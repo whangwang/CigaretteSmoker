@@ -15,6 +15,8 @@ import java.util.concurrent.Semaphore;
  */
 
 public class TableClass {
+    
+        public boolean Awake = false;
 
         private Semaphore Notfull = new Semaphore(2);
         private Semaphore Using = new Semaphore(1);
@@ -22,7 +24,9 @@ public class TableClass {
         public TableClass(){
             System.out.println("Table class build success");
             
-        }
+        }    
+        
+        
         public void run(String Material) throws InterruptedException{
             Notfull.acquire();
             Using.acquire();
@@ -42,4 +46,13 @@ public class TableClass {
         public ArrayList Getitems(){
             return (Items);
         }
+        
+        public boolean hasElement(String elementName)
+    {
+        return (Items.contains(elementName));
+    }
+        public boolean awake(){
+            return Awake;
+        }
+
 }

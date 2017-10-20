@@ -16,16 +16,18 @@ public class AgentClass extends Thread {
        private String Item1;
        private String Item2;
        private String Material;
-       public static TableClass Table =new TableClass();
-       AgentClass(String material ){
+       public TableClass Table;
+ //      public static TableClass Table =new TableClass();
+       AgentClass(String material ,TableClass table){
            Material = material;
+           Table=table;
            System.out.println("Build: "+Material);
        }
 
        public String Getame(){
            return Material;
        }
-       
+       @Override
        public void run(){
            //System.out.println(Material+" runing");
            while(true){

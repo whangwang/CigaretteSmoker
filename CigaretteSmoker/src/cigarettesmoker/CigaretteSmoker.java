@@ -23,66 +23,7 @@ public class CigaretteSmoker extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
-        
-        
-        
-        
-        
-//        ArrayList<String> ConstantMaterial = new ArrayList<String>();
-//        ConstantMaterial.add("Paper");
-//        ConstantMaterial.add("Tobacco");
-//        ConstantMaterial.add("Matches");
-//        FXMLDocumentController a = new FXMLDocumentController();
-//        //TableClass Table = new TableClass();
-//        AgentClass CigarettePaperAgent=new AgentClass ("CigarettePaper");
-//        AgentClass TobaccoAgent=new AgentClass ("Tobacco");
-//        AgentClass MatchesAgent=new AgentClass ("Mactches");
-
-//        CigarettePaperAgent.start();
-//        TobaccoAgent.start();
-//        MatchesAgent.start();
-//        
-//        System.out.println("Start");
-//        int i=0;
-//        while(i<1000){
-//            i++;
-//            sleep(3000);
-//            System.out.println(i);
-//            System.out.println("Size: "+CigarettePaperAgent.Table.Getitems().size());
-//            System.out.println(CigarettePaperAgent.isAlive());
-//            System.out.println(TobaccoAgent.isAlive());
-//            System.out.println(MatchesAgent.isAlive());
-//            System.out.println(CigarettePaperAgent.Table.Getitems().size());
-//            System.out.println(TobaccoAgent.Table.Getitems().size());
-//            System.out.println(MatchesAgent.Table.Getitems().size());
-//
-//            if(CigarettePaperAgent.Table.Getitems().size()==2){
-//                
-//                System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
-//                if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
-//                    TobaccoAgent.wake();
-//                    MatchesAgent.wake();
-//                    System.out.println("One");
-//                }
-//                else if(!CigarettePaperAgent.Table.Getitems().contains("Tobacco")){
-//                    CigarettePaperAgent.wake();
-//                    MatchesAgent.wake();   
-//                    System.out.println("Two");
-//                }
-//                else{
-//                    CigarettePaperAgent.wake();
-//                    TobaccoAgent.wake();
-//                    System.out.println("Three");
-//                }  
-//            }
-//        }
-//        
-        
-        
-        
-        
-        
+        Scene scene = new Scene(root);        
         stage.setScene(scene);
         stage.show();
         
@@ -93,8 +34,83 @@ public class CigaretteSmoker extends Application {
      */
 
     public static void main(String[] args) throws InterruptedException {
-        
+
         launch(args);
+        
+        ArrayList<String> elements = new ArrayList();
+        elements.add("CigarettePaper");
+        elements.add("Tobacco");
+        elements.add("Mactches");
+        
+        TableClass Table =new TableClass();
+     
+        
+        AgentClass CigarettePaperAgent=new AgentClass ("CigarettePaper",Table);
+        AgentClass TobaccoAgent=new AgentClass ("Tobacco",Table);
+        AgentClass MatchesAgent=new AgentClass ("Mactches",Table);
+
+        CigarettePaperAgent.start();
+        TobaccoAgent.start();
+        MatchesAgent.start();
+        
+    /*      
+        SmokerClass CigarettePaperSmoker=new SmokerClass ("CigarettePaper",Table);
+        SmokerClass TobaccoSmoker=new SmokerClass ("Tobacco",Table);
+        SmokerClass MatchesSmoker=new SmokerClass ("Mactches",Table);
+        
+        CigarettePaperSmoker.start();
+        TobaccoSmoker.start();
+        MatchesSmoker.start();
+        */
+        
+        for(int a=0;a<3;a++){
+            SmokerClass smoker = new SmokerClass(elements.get(a),Table);
+            smoker.start();
+        }
+
+//        
+        System.out.println("Start");
+        int i=0;
+        while(true){
+            
+        
+            Table.Awake = false;
+            
+            sleep(3000);
+            if(CigarettePaperAgent.Table.Getitems().size()==2){
+/*                
+                CigarettePaperSmoker.getItems(CigarettePaperAgent.Table.Getitems());
+                TobaccoSmoker.getItems(CigarettePaperAgent.Table.Getitems());
+                MatchesSmoker.getItems(CigarettePaperAgent.Table.Getitems());
+  */              
+                System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
+                
+                while(Table.awake()){
+                    if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
+                        TobaccoAgent.wake();
+                        MatchesAgent.wake();
+                        System.out.println("One");
+                        System.out.println("---------------");
+                        break;
+                    }
+                    else if(!CigarettePaperAgent.Table.Getitems().contains("Tobacco")){
+                        CigarettePaperAgent.wake();
+                        MatchesAgent.wake();   
+                        System.out.println("Two");                    
+                        System.out.println("---------------");
+                        break;
+                    }
+                    else{
+                        CigarettePaperAgent.wake();
+                        TobaccoAgent.wake();
+                        System.out.println("Three");
+                        System.out.println("---------------");
+                        break;
+                    }  
+                }
+            }
+        }
+        
         
     }
     
