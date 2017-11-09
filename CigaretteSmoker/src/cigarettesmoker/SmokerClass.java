@@ -21,7 +21,7 @@ public class SmokerClass extends Thread{
         element = Element;
         Table=table;
   //      Items = a;
-        System.out.println(element+"   smoker");
+  //      System.out.println(element+"   smoker");
     }
 
 

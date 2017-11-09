@@ -21,7 +21,7 @@ public class AgentClass extends Thread {
        AgentClass(String material ,TableClass table){
            Material = material;
            Table=table;
-           System.out.println("Build: "+Material);
+ //          System.out.println("Build: "+Material);
        }
 
        public String Getame(){
@@ -34,7 +34,7 @@ public class AgentClass extends Thread {
                //System.out.println(Material+" inwhile runing");
                try{
                    Table.run(Material);
-                   System.out.println(Material);
+//                   System.out.println(Material);
                    pause();
                    Table.Release();
                    sleep(10);

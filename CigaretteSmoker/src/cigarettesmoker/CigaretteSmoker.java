@@ -76,34 +76,34 @@ public class CigaretteSmoker extends Application {
         
             Table.Awake = false;
             
-            sleep(3000);
+            sleep(1500);
             if(CigarettePaperAgent.Table.Getitems().size()==2){
 /*                
                 CigarettePaperSmoker.getItems(CigarettePaperAgent.Table.Getitems());
                 TobaccoSmoker.getItems(CigarettePaperAgent.Table.Getitems());
                 MatchesSmoker.getItems(CigarettePaperAgent.Table.Getitems());
   */              
-                System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
+ //               System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
                 
                 while(Table.awake()){
                     if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
                         TobaccoAgent.wake();
                         MatchesAgent.wake();
-                        System.out.println("One");
+ //                       System.out.println("One");
                         System.out.println("---------------");
                         break;
                     }
                     else if(!CigarettePaperAgent.Table.Getitems().contains("Tobacco")){
                         CigarettePaperAgent.wake();
                         MatchesAgent.wake();   
-                        System.out.println("Two");                    
+ //                       System.out.println("Two");                    
                         System.out.println("---------------");
                         break;
                     }
                     else{
                         CigarettePaperAgent.wake();
                         TobaccoAgent.wake();
-                        System.out.println("Three");
+ //                       System.out.println("Three");
                         System.out.println("---------------");
                         break;
                     }  
