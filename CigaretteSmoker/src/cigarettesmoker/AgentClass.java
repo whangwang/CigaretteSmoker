@@ -36,6 +36,19 @@ public class AgentClass extends Thread {
                    Table.run(Material);
 //                   System.out.println(Material);
                    pause();
+                   if(CigaretteSmoker.material.size()!=2){
+                       int temp=0;
+                       if(Material=="CigarettePaper"){
+                           temp=1;
+                       }
+                       else if(Material=="Tobacco"){
+                           temp=2;
+                       }
+                       else{
+                           temp=3;
+                       }
+                       CigaretteSmoker.material.add(temp);
+                   }
                    Table.Release();
                    sleep(10);
                }catch(Exception e){}

@@ -18,7 +18,10 @@ import static java.lang.Thread.sleep;
  * @author HanWang
  */
 public class CigaretteSmoker extends Application {
-    
+    static public int pass=0;
+    static public int smokerid=0;
+    static public int smoketime=0;
+    static public ArrayList<Integer> material = new ArrayList();
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -35,7 +38,10 @@ public class CigaretteSmoker extends Application {
 
     public static void main(String[] args) throws InterruptedException {
 
-        
+        launch(args);
+
+    }
+    public static void test() throws InterruptedException{
         int check=0;
         ArrayList<String> elements = new ArrayList();
         elements.add("CigarettePaper");
@@ -53,15 +59,6 @@ public class CigaretteSmoker extends Application {
         TobaccoAgent.start();
         MatchesAgent.start();
         
-    /*      
-        SmokerClass CigarettePaperSmoker=new SmokerClass ("CigarettePaper",Table);
-        SmokerClass TobaccoSmoker=new SmokerClass ("Tobacco",Table);
-        SmokerClass MatchesSmoker=new SmokerClass ("Mactches",Table);
-        
-        CigarettePaperSmoker.start();
-        TobaccoSmoker.start();
-        MatchesSmoker.start();
-        */
         
         for(int a=0;a<3;a++){
             SmokerClass smoker = new SmokerClass(elements.get(a),Table);
@@ -71,21 +68,25 @@ public class CigaretteSmoker extends Application {
 //        
         System.out.println("Start");
         int i=0;
+        
         while(true){
             
-        
+//            if(check==0){
+//            launch(args);
+//            check++;
+//        }
             Table.Awake = false;
             
             sleep(1500);
             if(CigarettePaperAgent.Table.Getitems().size()==2){
-/*                
-                CigarettePaperSmoker.getItems(CigarettePaperAgent.Table.Getitems());
-                TobaccoSmoker.getItems(CigarettePaperAgent.Table.Getitems());
-                MatchesSmoker.getItems(CigarettePaperAgent.Table.Getitems());
-  */              
+             System.out.println(material);
+                    System.out.println(smokerid);  
+             
  //               System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
                 
                 while(Table.awake()){
+                    
+                    material.clear();
                     if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
                         TobaccoAgent.wake();
                         MatchesAgent.wake();
@@ -109,10 +110,7 @@ public class CigaretteSmoker extends Application {
                     }  
                 }
             }
-            if(check==0){
-            launch(args);
-            check++;
-        }
+        
         }
         
         

@@ -20,13 +20,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.concurrent.Task;
+
 
 /**
  *
  * @author HanWang
  */
 public class FXMLDocumentController implements Initializable {
-    
+    static final int max = 1000000;
     @FXML private AnchorPane rootPane;
     
     
@@ -55,6 +57,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("start");  
         AnchorPane pane = FXMLLoader.load(getClass().getResource("Second.fxml"));
         rootPane.getChildren().setAll(pane);
+        new Thread(task).start();
     }
     
     @Override
@@ -68,4 +71,14 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(a);
         
     }
+    
+
+Task task = new Task<Void>() {
+    @Override public Void call() throws InterruptedException {
+        
+        CigaretteSmoker.test();
+        return null ;
+    }
+    };
+
 }

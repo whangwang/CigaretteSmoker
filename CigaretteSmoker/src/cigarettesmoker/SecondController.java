@@ -5,8 +5,12 @@
  */
 package cigarettesmoker;
 
+import static java.lang.Thread.sleep;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,6 +40,10 @@ public class SecondController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         movesmoker(3);
+ 
+        
+        
+    
     }
     
     public void clicke(MouseEvent event){

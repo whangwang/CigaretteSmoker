@@ -38,7 +38,18 @@ public class SmokerClass extends Thread{
             if(Table.Getitems().size()==2 && !Table.Isempty() && !Table.hasElement(element)){                
                 System.out.println(element+" "+Table.Getitems());
                 try {
+                    if(element=="CigarettePaper"){
+                        CigaretteSmoker.smokerid=1;
+                    }
+                    else if(element=="Tobacco"){
+                        CigaretteSmoker.smokerid=2;
+                    }
+                    else{
+                        CigaretteSmoker.smokerid=3;
+                    }
                     doSmoke();
+                    
+                    //System.out.println(CigaretteSmoker.smokerid);
                     System.out.println(element+ " tells the agent to start the next round.");
   //                  Items = Table.Getitems();
                     Table.Awake = true;
@@ -53,6 +64,7 @@ public class SmokerClass extends Thread{
         System.out.println(element + " rolls the cigarette.");
         double time = getNext();
         Thread.sleep((long) time);
+        CigaretteSmoker.smoketime=(int)time;
         System.out.println(element + " has finished.");
     }
     
