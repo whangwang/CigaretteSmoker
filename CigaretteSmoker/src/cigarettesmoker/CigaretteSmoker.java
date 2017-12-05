@@ -35,8 +35,8 @@ public class CigaretteSmoker extends Application {
 
     public static void main(String[] args) throws InterruptedException {
 
-        launch(args);
         
+        int check=0;
         ArrayList<String> elements = new ArrayList();
         elements.add("CigarettePaper");
         elements.add("Tobacco");
@@ -109,6 +109,10 @@ public class CigaretteSmoker extends Application {
                     }  
                 }
             }
+            if(check==0){
+            launch(args);
+            check++;
+        }
         }
         
         
