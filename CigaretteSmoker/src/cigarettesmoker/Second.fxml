@@ -21,6 +21,56 @@
             <Font name="Century Gothic" size="31.0" />
          </font>
       </Label>
+      <Pane layoutX="563.0" layoutY="153.0" prefHeight="315.0" prefWidth="316.0" style="-fx-border-color: #566856; -fx-border-width: 2px;">
+         <children>
+            <Label layoutX="59.0" layoutY="142.0" onMouseClicked="#clicke" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Table" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="29.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane fx:id="ma_1" layoutX="168.0" layoutY="169.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@t-01.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Tobacco" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="ma_2" layoutX="168.0" layoutY="281.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@p-01.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Paper" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="ma_3" layoutX="168.0" layoutY="391.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@m-01.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Matches" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Pane layoutX="130.0" layoutY="151.0" prefHeight="94.0" prefWidth="306.0" style="-fx-background-color: #f4f4f4;">
          <children>
             <Label layoutX="23.0" layoutY="6.0" text="Material" textFill="#566856">
@@ -90,14 +140,6 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="563.0" layoutY="153.0" prefHeight="315.0" prefWidth="316.0" style="-fx-border-color: #566856; -fx-border-width: 2px;">
-         <children>
-            <Label layoutX="59.0" layoutY="142.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Table" textFill="#566856">
-               <font>
-                  <Font name="Century Gothic" size="29.0" />
-               </font>
-            </Label>
-         </children></Pane>
       <Pane layoutX="1006.0" layoutY="153.0" prefHeight="225.0" prefWidth="306.0" style="-fx-background-color: #f4f4f4;">
          <children>
             <Label layoutX="23.0" layoutY="16.0" text="Smoking Time" textFill="#566856">
@@ -133,7 +175,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="128.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+      <Pane fx:id="smokerA" layoutX="128.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
          <children>
             <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
                <children>
@@ -165,7 +207,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="568.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+      <Pane fx:id="smokerB" layoutX="568.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
          <children>
             <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
                <children>
@@ -197,7 +239,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="1006.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+      <Pane fx:id="smokerC" layoutX="1006.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
          <children>
             <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
                <children>
