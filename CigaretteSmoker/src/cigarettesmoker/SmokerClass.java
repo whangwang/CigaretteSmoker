@@ -2,7 +2,8 @@ package cigarettesmoker;
 
 import cigarettesmoker.AgentClass;
 import java.util.ArrayList;
-
+import java.util.*;
+import java.util.function.Predicate;
 /**
  *
  * @author joseph
@@ -50,7 +51,8 @@ public class SmokerClass extends Thread{
     public synchronized void doSmoke() throws Exception
     {
         System.out.println(element + " rolls the cigarette.");
-        Thread.sleep(500);
+        double time = getNext();
+        Thread.sleep((long) time);
         System.out.println(element + " has finished.");
     }
     
@@ -58,6 +60,9 @@ public class SmokerClass extends Thread{
         System.out.println("haha"+Table.Getitems());
     //    System.out.println(Items);
     }
-
+    public static double getNext() {
+	Random rand =new Random();
+	return  Math.log(1-rand.nextDouble())/(-1.8);
+    }
 
 }
