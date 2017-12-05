@@ -8,7 +8,7 @@
 	.st2{display:none;}
 	.st3{display:inline;fill:none;stroke:#566856;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st4{display:inline;fill:none;stroke:#8F9B5D;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	body{background-color: #F4F4F4;overflow: hidden;}
+	body{background-color: #eaeaea;overflow: hidden;}
 	svg{width:90vw;cursor:pointer;}
 </style>
 <g id="圖層_1_1_">

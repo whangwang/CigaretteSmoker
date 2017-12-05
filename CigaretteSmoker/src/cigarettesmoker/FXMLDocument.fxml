@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #F4F4F4;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cigarettesmoker.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #eaeaea;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cigarettesmoker.FXMLDocumentController">
     <children>
       <Label layoutX="137.0" layoutY="772.0" prefHeight="50.0" prefWidth="336.0" text="104703006 資科三 徐子崴" textFill="#566856">
          <font>
