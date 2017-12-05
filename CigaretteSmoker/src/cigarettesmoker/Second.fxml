@@ -21,6 +21,102 @@
             <Font name="Century Gothic" size="31.0" />
          </font>
       </Label>
+      <Pane fx:id="smokerA" layoutX="128.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+         <children>
+            <Pane fx:id="smokerA_status" layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
+               <children>
+                  <Label fx:id="smokerA_status_label" ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker A" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@t-01.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Tobacco" textFill="#566856">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="smokerB" layoutX="568.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+         <children>
+            <Pane fx:id="smokerB_status" layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
+               <children>
+                  <Label fx:id="smokerB_status_label" ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker B" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@p-01.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Paper" textFill="#566856">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="smokerC" layoutX="1006.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
+         <children>
+            <Pane fx:id="smokerC_status" layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
+               <children>
+                  <Label fx:id="smokerC_status_label" ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker C" textFill="#566856">
+               <font>
+                  <Font name="Century Gothic" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@m-01.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Matches" textFill="#566856">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
       <Pane layoutX="563.0" layoutY="153.0" prefHeight="315.0" prefWidth="316.0" style="-fx-border-color: #566856; -fx-border-width: 2px;">
          <children>
             <Label layoutX="59.0" layoutY="142.0" onMouseClicked="#clicke" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Table" textFill="#566856">
@@ -147,7 +243,7 @@
                   <Font name="Century Gothic" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="47.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: left;" text="3000" textFill="#566856">
+            <Label fx:id="time_label" layoutX="24.0" layoutY="47.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: left;" text="3000" textFill="#566856">
                <font>
                   <Font name="Century Gothic" size="39.0" />
                </font>
@@ -163,7 +259,7 @@
                   <Font name="Century Gothic" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="164.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: left;" text="3000" textFill="#566856">
+            <Label fx:id="pass_label" layoutX="25.0" layoutY="164.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: left;" text="0" textFill="#566856">
                <font>
                   <Font name="Century Gothic" size="39.0" />
                </font>
@@ -173,102 +269,6 @@
                   <Font name="Century Gothic" size="20.0" />
                </font>
             </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="smokerA" layoutX="128.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
-         <children>
-            <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
-               <children>
-                  <Label ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
-                     <font>
-                        <Font name="Century Gothic" size="23.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker A" textFill="#566856">
-               <font>
-                  <Font name="Century Gothic" size="29.0" />
-               </font>
-            </Label>
-            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
-               <children>
-                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@t-01.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Tobacco" textFill="#566856">
-                     <font>
-                        <Font name="Century Gothic" size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Pane fx:id="smokerB" layoutX="568.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
-         <children>
-            <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
-               <children>
-                  <Label ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
-                     <font>
-                        <Font name="Century Gothic" size="23.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker B" textFill="#566856">
-               <font>
-                  <Font name="Century Gothic" size="29.0" />
-               </font>
-            </Label>
-            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
-               <children>
-                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@p-01.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Paper" textFill="#566856">
-                     <font>
-                        <Font name="Century Gothic" size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Pane fx:id="smokerC" layoutX="1006.0" layoutY="514.0" prefHeight="289.0" prefWidth="307.0" style="-fx-background-color: #cfd2cf;">
-         <children>
-            <Pane layoutX="41.0" layoutY="259.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #566856;">
-               <children>
-                  <Label ellipsisString="" layoutX="17.0" layoutY="12.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Waiting..." textFill="WHITE">
-                     <font>
-                        <Font name="Century Gothic" size="23.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Label layoutX="58.0" layoutY="23.0" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Smoker C" textFill="#566856">
-               <font>
-                  <Font name="Century Gothic" size="29.0" />
-               </font>
-            </Label>
-            <Pane layoutX="41.0" layoutY="199.0" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #f4f4f4;">
-               <children>
-                  <ImageView fitHeight="38.0" fitWidth="48.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@m-01.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="70.0" layoutY="12.0" prefHeight="37.0" prefWidth="145.0" style="-fx-alignment: center;" text="Matches" textFill="#566856">
-                     <font>
-                        <Font name="Century Gothic" size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
          </children>
       </Pane>
    </children>
