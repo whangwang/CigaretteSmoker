@@ -18,9 +18,10 @@ import static java.lang.Thread.sleep;
  * @author HanWang
  */
 public class CigaretteSmoker extends Application {
-    static public int pass=0;
+    static public int pass=1;
     static public int smokerid=0;
     static public int smoketime=0;
+    static public TableClass Table =new TableClass();
     static public ArrayList<Integer> material = new ArrayList();
     @Override
     public void start(Stage stage) throws Exception {
@@ -48,7 +49,7 @@ public class CigaretteSmoker extends Application {
         elements.add("Tobacco");
         elements.add("Mactches");
         
-        TableClass Table =new TableClass();
+//        TableClass Table =new TableClass();
      
         
         AgentClass CigarettePaperAgent=new AgentClass ("CigarettePaper",Table);
@@ -71,22 +72,19 @@ public class CigaretteSmoker extends Application {
         
         while(true){
             
-//            if(check==0){
-//            launch(args);
-//            check++;
-//        }
+
             Table.Awake = false;
             
             sleep(1500);
             if(CigarettePaperAgent.Table.Getitems().size()==2){
-             System.out.println(material);
-                    System.out.println(smokerid);  
+              System.out.println("CS" + pass);
              
  //               System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
                 
                 while(Table.awake()){
-                    
                     material.clear();
+                    pass++;
+                    
                     if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
                         TobaccoAgent.wake();
                         MatchesAgent.wake();

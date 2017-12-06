@@ -51,6 +51,9 @@ public class TableClass {
     {
         return (Items.contains(elementName));
     }
+        public void wakeup(){
+            Awake=true;
+        }
         public boolean awake(){
             return Awake;
         }

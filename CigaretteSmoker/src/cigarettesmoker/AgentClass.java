@@ -4,15 +4,21 @@
  * and open the template in the editor.
  */
 package cigarettesmoker;
+/*
+import cigarettesmoker.CigaretteSmoker.material;
+import cigarettesmoker.CigaretteSmoker.smokerid;
+*/
+import cigarettesmoker.SecondController;
 
-import static java.lang.Thread.sleep;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author eric
  */
 public class AgentClass extends Thread {
- 
+       int tmp=0;
        private String Item1;
        private String Item2;
        private String Material;
@@ -35,20 +41,28 @@ public class AgentClass extends Thread {
                try{
                    Table.run(Material);
 //                   System.out.println(Material);
-                   pause();
+                   
                    if(CigaretteSmoker.material.size()!=2){
                        int temp=0;
                        if(Material=="CigarettePaper"){
-                           temp=1;
+                           temp=2;
                        }
                        else if(Material=="Tobacco"){
-                           temp=2;
+                           temp=1;
                        }
                        else{
                            temp=3;
                        }
                        CigaretteSmoker.material.add(temp);
                    }
+                   Random nn =new Random();
+                   //sleep(nn.nextInt(10000));
+                   //System.out.println("test1111 runpass");
+                   System.out.println(CigaretteSmoker.material);
+ //                  sleep(3000);
+                   System.out.println(CigaretteSmoker.smokerid); 
+ 
+                   pause();
                    Table.Release();
                    sleep(10);
                }catch(Exception e){}
@@ -69,6 +83,8 @@ public class AgentClass extends Thread {
                 this.wait();
             } catch (InterruptedException e) {}
         }
+
+   
                
        
     }

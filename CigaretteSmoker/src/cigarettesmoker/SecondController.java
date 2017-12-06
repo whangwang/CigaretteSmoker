@@ -6,14 +6,18 @@
 package cigarettesmoker;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -24,6 +28,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polyline;
 import javafx.util.Duration;
 import javax.swing.SwingUtilities;
+import java.util.concurrent.TimeUnit;
 
 /**
  * FXML Controller class
@@ -31,7 +36,8 @@ import javax.swing.SwingUtilities;
  * @author HanWang
  */
 public class SecondController implements Initializable {
-
+    
+    int Pass=0;
     /**
      * Initializes the controller class.
      */
@@ -49,27 +55,99 @@ public class SecondController implements Initializable {
     @FXML private Label smokerA_status_label;
     @FXML private Label smokerB_status_label;
     @FXML private Label smokerC_status_label;
+    @FXML private Label startbtn;
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
     }
     
     public void clicke(MouseEvent event){
-        runpass(1,2,3,4000);
+        startbtn.setText("Table");
+        new Thread(task).start();
+//        ArrayList <Integer> arr = new ArrayList();
+//        arr.add(2);
+//        arr.add(3);
+//        runpass(arr,1,980);
     }
     
-    public void runpass(int m_id_1,int m_id_2,int smoker,int time){
+   
+    
+    Task task = new Task<Void>() {
+    @Override public Void call() throws InterruptedException {
+        System.out.println("task");
+        //System.out.println(Integer.valueOf(pass_label.getText()));
+        int zz=0;
+        while(true){
+ //           System.out.println("inwhile");
+ /*
+            if(zz==1){
+   //             TimeUnit.SECONDS.sleep(1);
+                System.out.println("return");
+                   
+                zz=0;
+
+    //            TimeUnit.SECONDS.sleep(1);
+            }
+*/
+ //           while(Pass==CigaretteSmoker.pass){
+            
+ //               System.out.println("stillwaiting");
+ //           }
+            if(CigaretteSmoker.material.size()==2&&CigaretteSmoker.smokerid!=0&&CigaretteSmoker.smoketime!=0)
+            {
+                ArrayList arr = CigaretteSmoker.material;
+                int id = CigaretteSmoker.smokerid;
+                int time = CigaretteSmoker.smoketime;
+                
+                System.out.println("Enter in if" + "  "+Pass);
+             //   runpass(CigaretteSmoker.material,CigaretteSmoker.smokerid,CigaretteSmoker.smoketime);
+                runpass(arr,id,time);
+            Platform.runLater(new Runnable() {
+                 @Override public void run() {
+//                     //pass_label.setText(String.valueOf(Integer.valueOf(pass_label.getText())+1));
+////                     Pass++;
+                    System.out.println("before timelable");
+                     time_label.setText(String.valueOf(CigaretteSmoker.smoketime));
+                     pass_label.setText(String.valueOf(Pass));
+                     
+                     System.out.println("after timelable");             
+                 }
+        });
+            
+        CigaretteSmoker.Table.wakeup();
+        TimeUnit.MILLISECONDS.sleep(CigaretteSmoker.smoketime+2200);
+ //       zz=1;
+
+        //this.wait(500);
+        }
+            else{
+                continue;
+            }
+        }
+        //return null ;
+    }
+    };
+    
+    public void runpass(ArrayList <Integer> m_id, int smoker,int time) throws InterruptedException{
+        Pass++;
+        System.out.println("test"+" Pass: "+Pass);
+        System.out.println("arr = "+m_id+"id = "+smoker+"time = "+time);
+       int m_id_1=m_id.get(0);
+        int m_id_2=m_id.get(1);
         if(m_id_1>m_id_2){
             int swp;
             swp=m_id_1;
             m_id_1=m_id_2;
             m_id_2=swp;
-        }
-        movematerial(m_id_1,m_id_2);
+        }        
+        movematerial(m_id_1,m_id_2,time);
         movesmoker(smoker,m_id_1,m_id_2);
-        time_label.setText(String.valueOf(time));
-        pass_label.setText(String.valueOf(Integer.valueOf(pass_label.getText())+1));
+        System.out.println("runpass over");
+        //this.wait(50);
+        
+       
     }
     
    
@@ -142,8 +220,8 @@ public class SecondController implements Initializable {
                         ma_2.setTranslateY(121);
                         break;
                     default:
-                        ma_3.setTranslateX(168);
-                        ma_3.setTranslateY(231);
+                        ma_3.setTranslateX(8);
+                        ma_3.setTranslateY(9);
                         break;
             }
             backsmoker(smoke);
@@ -151,7 +229,9 @@ public class SecondController implements Initializable {
         timeline.play();      
     }
    
-    public void movematerial(int id1,int id2){
+    public void movematerial(int id1,int id2,int time){
+        //time_label.setText(String.valueOf(time));
+        //pass_label.setText(String.valueOf(Integer.valueOf(pass_label.getText())+1));
         Polyline line1 = new Polyline();
         Polyline line2 = new Polyline();
         PathTransition transition = new PathTransition();
@@ -212,6 +292,7 @@ public class SecondController implements Initializable {
         }
         transition1.setDuration(Duration.millis(1800));
         transition1.setPath(line2);
+        
         transition.play();
         transition1.play();
     }
@@ -269,8 +350,11 @@ public class SecondController implements Initializable {
 
     public void movesmoker(int id,int m_id_1,int m_id_2){
          Timer timer = new Timer();
+         System.out.println("movesmoker");
         switch (id) {
             case 1:
+                                        System.out.println("run case1");
+
                 Line line1 = new Line(153, 145, 593, 145);
                 Line line2 = new Line(153, 145, 591, 145);
                 Line line3 = new Line(153, 145, 591, 145);
@@ -289,9 +373,12 @@ public class SecondController implements Initializable {
                 transition3.setDuration(Duration.millis(800));
                 transition3.setPath(line3);
                 transition3.play();
+                System.out.println("case1 over");
                 changeStatus(1,m_id_1,m_id_2);
                 break;
             case 3:
+                                        System.out.println("run case3");
+
                 Line line1r = new Line(153, 145, -287, 145);
                 Line line2r = new Line(153, 145, -285, 145);
                 Line line3r = new Line(153, 145, -285, 145);
@@ -311,7 +398,8 @@ public class SecondController implements Initializable {
                 transition3r.setPath(line3r);
                 transition3r.play();
                 TimerTask task1 = new TimerTask() {   
-                    public void run() {   
+                    public void run() {  
+                        System.out.println("run task1");
                         smokerC_status.setStyle("-fx-background-color: #EA7484");
                         smokerC_status_label.setText("Smoking...");
                     }   

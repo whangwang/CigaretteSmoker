@@ -119,7 +119,7 @@
       </Pane>
       <Pane layoutX="563.0" layoutY="153.0" prefHeight="315.0" prefWidth="316.0" style="-fx-border-color: #566856; -fx-border-width: 2px;">
          <children>
-            <Label layoutX="59.0" layoutY="142.0" onMouseClicked="#clicke" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Table" textFill="#566856">
+            <Label fx:id="startbtn" layoutX="59.0" layoutY="142.0" onMouseClicked="#clicke" prefHeight="37.0" prefWidth="194.0" style="-fx-alignment: center;" text="Start!" textAlignment="CENTER" textFill="#566856">
                <font>
                   <Font name="Century Gothic" size="29.0" />
                </font>
