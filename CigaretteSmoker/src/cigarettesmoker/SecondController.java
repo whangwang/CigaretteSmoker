@@ -117,7 +117,7 @@ public class SecondController implements Initializable {
         });
             
         CigaretteSmoker.Table.wakeup();
-        TimeUnit.MILLISECONDS.sleep(CigaretteSmoker.smoketime+2200);
+        TimeUnit.MILLISECONDS.sleep(CigaretteSmoker.smoketime+2700);
  //       zz=1;
 
         //this.wait(500);
