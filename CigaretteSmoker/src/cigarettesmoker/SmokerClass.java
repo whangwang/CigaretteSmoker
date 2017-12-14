@@ -47,9 +47,9 @@ public class SmokerClass extends Thread{
                     else{
                         CigaretteSmoker.smokerid=3;
                     }
-                    System.out.println("id: "+CigaretteSmoker.smokerid);
+//                    System.out.println("id: "+CigaretteSmoker.smokerid);
                     doSmoke();
-                    System.out.println("time: "+CigaretteSmoker.smoketime);
+ //                   System.out.println("time: "+CigaretteSmoker.smoketime);
 
                     //System.out.println(CigaretteSmoker.smokerid);
                     System.out.println(element+ " tells the agent to start the next round.");
@@ -69,7 +69,7 @@ public class SmokerClass extends Thread{
         System.out.println(element + " rolls the cigarette.");
         double time = getNext();
         Thread.sleep((long) time);
-        CigaretteSmoker.smoketime=(int)((time+2)*1000);
+        CigaretteSmoker.smoketime=(int)((time+1.5)*1000);
         System.out.println(element + " has finished.");
     }
     

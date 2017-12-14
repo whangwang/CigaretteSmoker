@@ -12,6 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import static java.lang.Thread.sleep;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 
 /**
  *
@@ -75,11 +78,11 @@ public class CigaretteSmoker extends Application {
 
             Table.Awake = false;
             
-            sleep(1500);
+            sleep(600);
+            System.out.println(CigarettePaperAgent.Table.Getitems());
             if(CigarettePaperAgent.Table.Getitems().size()==2){
-              System.out.println("CS" + pass);
              
- //               System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
+                System.out.println("INmain: "+CigarettePaperAgent.Table.Getitems());
                 
                 while(Table.awake()){
                     material.clear();
@@ -87,6 +90,7 @@ public class CigaretteSmoker extends Application {
                     
                     if(!CigarettePaperAgent.Table.Getitems().contains("CigarettePaper")){
                         TobaccoAgent.wake();
+//                        TimeUnit.MICROSECONDS.sleep((int)(Exponential()*100));
                         MatchesAgent.wake();
  //                       System.out.println("One");
                         System.out.println("---------------");
@@ -94,6 +98,7 @@ public class CigaretteSmoker extends Application {
                     }
                     else if(!CigarettePaperAgent.Table.Getitems().contains("Tobacco")){
                         CigarettePaperAgent.wake();
+ //                       TimeUnit.MICROSECONDS.sleep((int)(Exponential()*100));
                         MatchesAgent.wake();   
  //                       System.out.println("Two");                    
                         System.out.println("---------------");
@@ -101,17 +106,26 @@ public class CigaretteSmoker extends Application {
                     }
                     else{
                         CigarettePaperAgent.wake();
+ //                       TimeUnit.MICROSECONDS.sleep((int)(Exponential()*100));
                         TobaccoAgent.wake();
  //                       System.out.println("Three");
                         System.out.println("---------------");
                         break;
-                    }  
+                    }
+
                 }
+                                    
+
             }
         
         }
         
         
+    }
+    public static double Exponential() {
+	Random rand =new Random();
+        System.out.println(Math.log(1-rand.nextDouble())/(-10));
+	return  Math.log(1-rand.nextDouble())/(-10);
     }
     
 }

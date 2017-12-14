@@ -101,23 +101,23 @@ public class SecondController implements Initializable {
                 int id = CigaretteSmoker.smokerid;
                 int time = CigaretteSmoker.smoketime;
                 
-                System.out.println("Enter in if" + "  "+Pass);
+ //               System.out.println("Enter in if" + "  "+Pass);
              //   runpass(CigaretteSmoker.material,CigaretteSmoker.smokerid,CigaretteSmoker.smoketime);
                 runpass(arr,id,time);
             Platform.runLater(new Runnable() {
                  @Override public void run() {
 //                     //pass_label.setText(String.valueOf(Integer.valueOf(pass_label.getText())+1));
 ////                     Pass++;
-                    System.out.println("before timelable");
+ //                   System.out.println("before timelable");
                      time_label.setText(String.valueOf(CigaretteSmoker.smoketime));
                      pass_label.setText(String.valueOf(Pass));
                      
-                     System.out.println("after timelable");             
+//                     System.out.println("after timelable");             
                  }
         });
             
         CigaretteSmoker.Table.wakeup();
-        TimeUnit.MILLISECONDS.sleep(CigaretteSmoker.smoketime+2700);
+        TimeUnit.MILLISECONDS.sleep(CigaretteSmoker.smoketime+2900);
  //       zz=1;
 
         //this.wait(500);
@@ -133,7 +133,7 @@ public class SecondController implements Initializable {
     public void runpass(ArrayList <Integer> m_id, int smoker,int time) throws InterruptedException{
         Pass++;
         System.out.println("test"+" Pass: "+Pass);
-        System.out.println("arr = "+m_id+"id = "+smoker+"time = "+time);
+//        System.out.println("arr = "+m_id+"id = "+smoker+"time = "+time);
        int m_id_1=m_id.get(0);
         int m_id_2=m_id.get(1);
         if(m_id_1>m_id_2){
@@ -144,7 +144,7 @@ public class SecondController implements Initializable {
         }        
         movematerial(m_id_1,m_id_2,time);
         movesmoker(smoker,m_id_1,m_id_2);
-        System.out.println("runpass over");
+//        System.out.println("runpass over");
         //this.wait(50);
         
        

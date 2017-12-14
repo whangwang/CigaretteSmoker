@@ -12,6 +12,7 @@ import cigarettesmoker.SecondController;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -40,41 +41,39 @@ public class AgentClass extends Thread {
                //System.out.println(Material+" inwhile runing");
                try{
                    Table.run(Material);
-//                   System.out.println(Material);
                    
                    if(CigaretteSmoker.material.size()!=2){
                        int temp=0;
                        if(Material=="CigarettePaper"){
                            temp=2;
+//                        System.out.println("bbbbb");
+
                        }
                        else if(Material=="Tobacco"){
                            temp=1;
                        }
                        else{
                            temp=3;
+ //                           System.out.println("aaaaa");
                        }
                        CigaretteSmoker.material.add(temp);
                    }
                    Random nn =new Random();
-                   //sleep(nn.nextInt(10000));
-                   //System.out.println("test1111 runpass");
-                   System.out.println(CigaretteSmoker.material);
- //                  sleep(3000);
-                   System.out.println(CigaretteSmoker.smokerid); 
+
  
                    pause();
                    Table.Release();
-                   sleep(10);
+                   sleep((int)Exponential()*100);
                }catch(Exception e){}
            
                }
        
            }
        public synchronized void wake(){
+
             try{
                 notify();
-                //System.out.println(Material+" notify");
-                
+                System.out.println(this.Material);
             } catch(Exception e){}
         }
 
@@ -84,7 +83,11 @@ public class AgentClass extends Thread {
             } catch (InterruptedException e) {}
         }
 
-   
+       public static double Exponential() {
+	Random rand =new Random();
+        System.out.println(Math.log(1-rand.nextDouble())/(-10));
+	return  Math.log(1-rand.nextDouble())/(-10);
+    }
                
        
     }
